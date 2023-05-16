@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/presentation/feature/counter/cubit/counter_cubit.dart';
+import 'package:flutter_basic/presentation/routes/router.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterBody extends StatelessWidget {
@@ -36,6 +38,13 @@ class CounterBody extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.navigateTo(const DetailsRoute());
+        },
+        tooltip: 'Navigate to Details',
+        child: const Icon(Icons.arrow_right_alt_outlined),
       ),
     );
   }
